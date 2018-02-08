@@ -15,19 +15,22 @@ describe('Inital test', () => {
     const wrapper = shallow(
        <VotingButton />
    );
-   expect(wrapper.prop('children')).toEqual('Vote Hot!');
+   // console.log(wrapper.find('#hotButton'))
+   // expect(wrapper.prop('children')).toEqual('Vote Hot!');
   });
 
-  it('should render a Vote Hot prop', () => {
+  it('should click button', () => {
     // const component = shallow(<VotingButton />)
 
-    const wrapper = shallow(
+    const wrapper = mount(
        <VotingButton />
    );
    // component.debug()
-   console.log(wrapper.debug())
+   // expect(wrapper).toEqual('Foo')
    wrapper.find('[id="hotButton"]').simulate('click')
-   console.log(wrapper.prop('children'))
-   console.log(shallow(<VotingButton/>).instance().label)
+   expect(wrapper.find('[id="voteDisplay"]').text()).toEqual('Hello Nero, the vote stands at 1')
+   // console.log(wrapper.counter)
+   // console.log(wrapper.prop('children'))
+   // console.log(shallow(<VotingButton/>).instance().label)
   });
 });

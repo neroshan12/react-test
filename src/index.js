@@ -24,14 +24,14 @@ class VotingButton extends React.Component {
   render() {
     return ([
     <button onClick={() => this.setState( { currentVote: this.counter.voteHot() } )
-  } id='hotButton'>Vote Hot!</button>,
-    <p>Hello Nero, the vote stands at {this.state.currentVote}</p>
+  } id='hotButton' key='1'>Vote Hot!</button>,
+    <p id='voteDisplay' key='2'>Hello Nero, the vote stands at {this.state.currentVote}</p>
     // console.log(this.state.counter)
     // <p>{this.props.name}</p>
 
   ])
   }
 }
-ReactDOM.render(<VotingButton />, document.getElementById('root')
-); //find root and replace
+// ReactDOM.render(<VotingButton />, document.getElementById('root')
+// ); //find root and replace
 export default VotingButton;

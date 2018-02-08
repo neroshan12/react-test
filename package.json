@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "babel": "^6.23.0",
     "jest-cli": "^22.1.4",
     "react": "^16.2.0",
-    "react-dom": "^16.2.0",
     "react-scripts": "1.1.0"
   },
   "scripts": {
@@ -15,13 +15,31 @@
     "eject": "react-scripts eject"
   },
   "jest": {
-    "setupTestFrameworkScriptFile": "my-app/src/setupTests.js"
+    "verbose": true,
+    "setupTestFrameworkScriptFile": "<rootDir>/src/setupTests.js",
+    "setupFiles": [
+      "./test/jestsetup.js"
+    ],
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
+    "moduleNameMapper": {
+      "^.+\\.(css|scss)$": "identity-obj-proxy"
+    }
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
     "babel-jest": "^22.1.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
-    "jest": "^22.1.4",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-15": "^1.0.5",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme-to-json": "^3.3.1",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^22.2.1",
+    "react-addons-test-utils": "^15.6.2",
+    "react-dom": "^16.2.0",
     "react-test-renderer": "^16.2.0"
   }
 }
